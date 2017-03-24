@@ -16,16 +16,16 @@ Route::get('/',['as'=>'site.home','uses'=>'Site\HomeController@index']);
 
 
 
-Route::get('/login',['as'=>'site.login','uses'=>'Site\LoginController@index']);
-Route::get('/login/sair',['as'=>'site.login.sair','uses'=>'Site\LoginController@sair']);
-Route::post('/login/entrar',['as'=>'site.login.entrar','uses'=>'Site\LoginController@entrar']);
+Route::get('/admin/login',['as'=>'site.login','uses'=>'Site\LoginController@index']);
+Route::get('/admin/login/sair',['as'=>'site.login.sair','uses'=>'Site\LoginController@sair']);
+Route::post('/admin/login/entrar',['as'=>'site.login.entrar','uses'=>'Site\LoginController@entrar']);
 
 
 
 
 //grupos de roda... protegendo com tela de login
 //
-Route::group(['middleware'=>'auth'],function(){
+//Route::group(['middleware'=>'auth'],function(){
 
 //criando rota crud.... as = apelido...
 Route::get('/admin/cursos',['as'=>'admin.cursos','uses'=>'Admin\CursoControler@index']);
@@ -37,4 +37,4 @@ Route::get('/admin/cursos/deletar/{id}',['as'=>'admin.cursos.deletar','uses'=>'A
 
 
 
-});
+//});

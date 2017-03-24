@@ -11,7 +11,7 @@
 	<div class="container">
 		<h3 align="center">Entrar no sistema...</h3>
 		<div class="row">
-			<form class="" action="{{ route('site.login.entrar') }}" method="post">
+			<form class="" action="{{route('site.login.entrar')}}" method="post">
 			{{ csrf_field()}} <!-- token para funcionar o formulario, criar um input escondido com token -->
 			
 				
@@ -27,7 +27,7 @@
 				<label>Senha</label>
 			</div>		
 
-			<button class="btn deep-orange">Entrar</button>
+			<button href="{{ route('site.login.entrar') }}" class="btn deep-orange">Entrar</button>
 				
 			</form>			
 	    </div>	        
